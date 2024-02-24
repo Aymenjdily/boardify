@@ -5,12 +5,22 @@ import "./globals.css";
 // adding radix-ui
 import "@radix-ui/themes/styles.css";
 import { Theme } from "@radix-ui/themes";
+import { siteConfig } from "@/config/site";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Boardify",
-  description: "Trello Clone, using next js",
+  title: {
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  icons: [
+    {
+      url: "/logo.png",
+      href: "/logo.png"
+    }
+  ]
 };
 
 export default function RootLayout({
